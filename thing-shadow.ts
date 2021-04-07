@@ -5,7 +5,7 @@ async function main() {
     keyPath: 'certs/c1c5ef35d2-private.pem.key',
     certPath: 'certs/c1c5ef35d2-certificate.pem.crt',
     caPath: 'certs/AmazonRootCA1.pem',
-    clientId: 'client-test-1234',
+    clientId: 'client-test-123',
     host: 'a4kiw8koxs6m7-ats.iot.us-east-1.amazonaws.com',
     debug: true,
   });
@@ -16,15 +16,14 @@ async function main() {
   let bval = 222;
 
   thingDevice.on('connect', function () {
-    thingDevice.register('RGBLedLamp', {
+    thingDevice.register('MyTestShadoww', {
       ignoreDeltas: true,
-      discardStale: false,
     }, function () {
       console.log('connected');
       const rgbLedLampState = { "state": { "desired": { "red": rval, "green": gval, "blue": bval } } };
-      const thingUpdate = thingDevice.update('RGBLebLamp', rgbLedLampState);
-      clientTokenUpdate = thingUpdate ? thingUpdate : '';
-      console.log("🚀 ~ file: thing-shadow.ts ~ line 25 ~ clientTokenUpdate", clientTokenUpdate)
+      const thingUpdate = thingDevice.update('MyTestShadoww', rgbLedLampState);
+      clientTokenUpdate = thingUpdate ? thingUpdate : null;
+      console.log("🚀 ~ file: thing-shadow.ts ~ line 25 ~ clientTokenUpdate", clientTokenUpdate);
 
       if (clientTokenUpdate === null) {
         console.log('update shadow failed, operation still in progress');
