@@ -1,11 +1,6 @@
 {
 	"operation" : "install",
 	"version" : "1.0",
-	"packageName" : "install.py",
-	"autoStart" : "true",
-	"workingDirectory" : "/home/ec2-user/JobSampleTesting",
-	"files" : {
-		"fileName" : "install.py",
-		"url" : "${aws:iot:s3-presigned-url:https://aws-iot-vincent.s3.us-east-1.amazonaws.com/job/installJob.json?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZQHM762GCHW2TT6B%2F20210407%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210407T095037Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1e80ac3a104be1a2ba852e3d9c5f5cee3f5492169a9a824b3f3d8f2860886222}"
-	}
+	"description": "This is a test job document",
+	"displayImage": "${aws:iot:s3-presigned-url:https://s3.us-east-1.amazonaws.com/aws-iot-vincent/vincent.jpg}"
 }
